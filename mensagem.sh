@@ -1,148 +1,71 @@
 #!/bin/bash
 
-# SIMULAÇÃO VISUAL EDUCATIVA
-# Este script NÃO criptografa, NÃO apaga e NÃO modifica arquivos.
+# Define cores para o terminal
+RED='\033[1;31m'
+WHITE='\033[1;37m'
+BLINK='\033[5;31m'
+RESET='\033[0m'
 
+# Limpa a tela para dar o efeito de "sequestro" do terminal
 clear
 
-RED="\033[1;31m"
-WHITE="\033[1;37m"
-YELLOW="\033[1;33m"
-RESET="\033[0m"
-
+# Imprime a caveira em vermelho
 echo -e "${RED}"
-cat << "EOF"
-              .-""""-.
-             /        \
-            /_        _\
-           // \      / \\
-           |\__\    /__/|
-            \    ||    /
-             \        /
-              \  __  /
-               '.__.'
-                |  |
-              __|  |__
-             /        \
+cat << 'EOF'
+            _,.-------.,_
+        ,;~'             '~;,
+      ,;                     ;,
+     ;                         ;
+    ,'                         ',
+    ,;                           ;,
+    ; ;      .           .      ; ;
+    | ;   ______       ______   ; |
+    |  `/~"     ~" . "~     "~\'  |
+    |  ~  ,-~~~^~, | ,~^~~~-,  ~  |
+     |   |        }:{        |   |
+     |   l       / | \       !   |
+     .~  (__,.--" .^. "--.,__)  ~.
+     |     ---;' / | \ `;---     |
+      \__.       \/^\/       .__/
+       V| \                 / |V
+        | |T~\___!___!___/~T| |
+        | |`IIII_I_I_I_IIII'| |
+        |  \,III I I I III,/  |
+         \   `~~~~~~~~~~'    /
+           \   .       .   /
+             \.    ^    ./
+               ^~~~^~~~^
 EOF
+
+echo -e "${WHITE}"
+echo "=========================================================================="
+echo -e "${BLINK}          OOPS, SEUS ARQUIVOS FORAM (SIMULADOS) CRIPTOGRAFADOS!       ${WHITE}"
+echo "=========================================================================="
+echo ""
+echo "O que aconteceu?"
+echo "Esta é uma demonstração educacional inspirada em malwares como o Petya."
+echo "Se isto fosse um ataque real, todos os seus documentos, fotos e bancos"
+echo "de dados estariam inacessíveis neste momento."
+echo ""
+echo -e "${RED}[!] AVISO DE SEGURANÇA: NENHUM ARQUIVO FOI ALTERADO! [!]${WHITE}"
+echo "Este script é puramente visual. Ele não criptografa, não copia e não"
+echo "deleta absolutamente nada do seu computador."
+echo ""
+echo "Como sair desta tela?"
+echo "1. Respire fundo, seu computador está seguro."
+echo "2. Pressione [ CTRL + C ] para encerrar o script."
+echo "3. Cuidado com links suspeitos e pendrives desconhecidos no futuro!"
+echo ""
+echo "ID da Simulação: $RANDOM-XYZ-9981"
+echo "=========================================================================="
 echo -e "${RESET}"
 
-echo -e "${RED}============================================================${RESET}"
-echo -e "${WHITE}              ☠ SIMULAÇÃO EDUCATIVA ☠${RESET}"
-echo -e "${RED}============================================================${RESET}"
-echo
-echo -e "${YELLOW}ATENÇÃO:${RESET}"
-echo
-echo -e "${WHITE}Esta é apenas uma demonstração visual de uma tela"
-echo -e "inspirada em ransomwares para fins de estudo e conscientização.${RESET}"
-echo
-echo -e "${RED}Seus arquivos NÃO foram criptografados."
-echo -e "Nenhum dado foi apagado."
-echo -e "Nenhuma alteração foi feita no sistema.${RESET}"
-echo
-echo -e "${WHITE}Em um ataque real, mensagens como esta poderiam indicar"
-echo -e "comprometimento do sistema. Nunca pague resgate sem orientação"
-echo -e "técnica e sempre mantenha backups seguros.${RESET}"
-echo
-echo -e "${RED}============================================================${RESET}"
-echo
-read -p "Pressione ENTER para encerrar a simulação..."
-clear
-echo -e "${WHITE}Simulação encerrada com segurança.${RESET}"
-```
+# Esconde o cursor piscante para parecer uma tela travada
+tput civis
 
-Para usar:
-
-```bash
-nano simulacao.sh
-```
-
-Cole o conteúdo, salve e execute:
-
-```bash
-chmod +x simulacao.sh
-./simulacao.sh
-```
-
-Se quiser também abrir um **pop-up gráfico com Zenity**, pode adicionar isto antes do `read`:
-
-```bash
-if command -v zenity >/dev/null 2>&1; then
-    zenity --warning \
-    --title="☠ Simulação Educativa" \
-    --text="☠ SIMULAÇÃO DE RANSOMWARE ☠
-
-Seus arquivos NÃO foram criptografados.
-Nenhum dado foi apagado.
-Nenhuma alteração foi feita no sistema.
-
-Esta é apenas uma demonstração visual para conscientização." \
-    --width=500 \
-    --height=280
-fi
-```
-
-Versão completa com terminal + pop-up:
-
-```bash
-#!/bin/bash
-
-clear
-
-RED="\033[1;31m"
-WHITE="\033[1;37m"
-YELLOW="\033[1;33m"
-RESET="\033[0m"
-
-echo -e "${RED}"
-cat << "EOF"
-              .-""""-.
-             /        \
-            /_        _\
-           // \      / \\
-           |\__\    /__/|
-            \    ||    /
-             \        /
-              \  __  /
-               '.__.'
-                |  |
-              __|  |__
-             /        \
-EOF
-echo -e "${RESET}"
-
-echo -e "${RED}============================================================${RESET}"
-echo -e "${WHITE}              ☠ SIMULAÇÃO EDUCATIVA ☠${RESET}"
-echo -e "${RED}============================================================${RESET}"
-echo
-echo -e "${YELLOW}ATENÇÃO:${RESET}"
-echo
-echo -e "${WHITE}Esta é uma demonstração visual inspirada em ransomwares.${RESET}"
-echo
-echo -e "${RED}Seus arquivos NÃO foram criptografados."
-echo -e "Nenhum dado foi apagado."
-echo -e "Nenhuma alteração foi feita no sistema.${RESET}"
-echo
-echo -e "${WHITE}Use apenas em ambiente próprio, laboratório ou treinamento.${RESET}"
-echo
-echo -e "${RED}============================================================${RESET}"
-
-if command -v zenity >/dev/null 2>&1; then
-    zenity --warning \
-    --title="☠ Simulação Educativa" \
-    --text="☠ SIMULAÇÃO DE RANSOMWARE ☠
-
-Seus arquivos NÃO foram criptografados.
-Nenhum dado foi apagado.
-Nenhuma alteração foi feita no sistema.
-
-Esta é apenas uma demonstração visual para conscientização." \
-    --width=500 \
-    --height=280
-fi
-
-echo
-read -p "Pressione ENTER para encerrar a simulação..."
-clear
-echo -e "${WHITE}Simulação encerrada com segurança.${RESET}"
-```
+# Loop infinito para segurar a tela (mimificando o travamento do PC)
+# Só sai se o usuário apertar CTRL+C
+trap "tput cnorm; clear; echo 'Simulação encerrada. O terminal voltou ao normal.'; exit" SIGINT
+while true; do
+    sleep 1
+done
