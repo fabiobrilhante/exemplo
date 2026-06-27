@@ -1,33 +1,148 @@
 #!/bin/bash
-# 🔒 SIMULAÇÃO EDUCACIONAL - INTERFACE VISUAL TIPO RANSOMWARE
-# ⚠️ ESTE SCRIPT NÃO ALTERA, CRIPTOGRAFA OU DANIFICA NENHUM ARQUIVO/SISTEMA.
-# Use APENAS em máquinas de teste isoladas e com autorização documentada.
 
-# Verifica dependências
-for cmd in zenity tput; do
-    command -v $cmd &>/dev/null || { echo "Instale: sudo apt install zenity"; exit 1; }
-done
+# SIMULAÇÃO VISUAL EDUCATIVA
+# Este script NÃO criptografa, NÃO apaga e NÃO modifica arquivos.
 
-# Limpa terminal e simula "boot" (apenas texto colorido)
 clear
-echo -e "\033[1;31m[!] INICIANDO VERIFICAÇÃO DE INTEGRIDADE DO DISCO...\033[0m"
-sleep 1.2
-echo -e "\033[1;33m[•] Lendo setores do volume principal...\033[0m"
-sleep 0.9
-echo -e "\033[1;33m[•] Verificando tabela de partição...\033[0m"
-sleep 0.7
-echo -e "\033[1;31m[✖] ERRO CRÍTICO: SISTEMA PROTEGIDO (SIMULAÇÃO EDUCACIONAL)\033[0m"
-sleep 1.5
 
-# Janela principal com zenity
-zenity --error \
-    --title="⚠️ SIMULAÇÃO - AMBIENTE CONTROLADO" \
-    --text="Esta é uma demonstração visual para fins de estudo em segurança cibernética.\n\n✅ Nenhum arquivo foi modificado\n✅ Nenhum processo foi bloqueado\n✅ Nenhuma conexão externa foi estabelecida\n✅ Nenhum dado foi comprometido\n\nEsta interface simula o comportamento visual de ameaças conhecidas para treinamento de conscientização e análise de resposta a incidentes.\n\nClique em 'OK' para encerrar a simulação com segurança." \
-    --width=700 \
-    --height=380 \
-    --ok-label="Encerrar Simulação"
+RED="\033[1;31m"
+WHITE="\033[1;37m"
+YELLOW="\033[1;33m"
+RESET="\033[0m"
 
-# Finalização limpa
+echo -e "${RED}"
+cat << "EOF"
+              .-""""-.
+             /        \
+            /_        _\
+           // \      / \\
+           |\__\    /__/|
+            \    ||    /
+             \        /
+              \  __  /
+               '.__.'
+                |  |
+              __|  |__
+             /        \
+EOF
+echo -e "${RESET}"
+
+echo -e "${RED}============================================================${RESET}"
+echo -e "${WHITE}              ☠ SIMULAÇÃO EDUCATIVA ☠${RESET}"
+echo -e "${RED}============================================================${RESET}"
+echo
+echo -e "${YELLOW}ATENÇÃO:${RESET}"
+echo
+echo -e "${WHITE}Esta é apenas uma demonstração visual de uma tela"
+echo -e "inspirada em ransomwares para fins de estudo e conscientização.${RESET}"
+echo
+echo -e "${RED}Seus arquivos NÃO foram criptografados."
+echo -e "Nenhum dado foi apagado."
+echo -e "Nenhuma alteração foi feita no sistema.${RESET}"
+echo
+echo -e "${WHITE}Em um ataque real, mensagens como esta poderiam indicar"
+echo -e "comprometimento do sistema. Nunca pague resgate sem orientação"
+echo -e "técnica e sempre mantenha backups seguros.${RESET}"
+echo
+echo -e "${RED}============================================================${RESET}"
+echo
+read -p "Pressione ENTER para encerrar a simulação..."
 clear
-echo -e "\033[1;32m[✓] SIMULAÇÃO ENCERRADA COM SUCESSO.\033[0m"
-echo -e "\033[1;34mNenhuma alteração foi feita no sistema. Ambiente íntegro.\033[0m"
+echo -e "${WHITE}Simulação encerrada com segurança.${RESET}"
+```
+
+Para usar:
+
+```bash
+nano simulacao.sh
+```
+
+Cole o conteúdo, salve e execute:
+
+```bash
+chmod +x simulacao.sh
+./simulacao.sh
+```
+
+Se quiser também abrir um **pop-up gráfico com Zenity**, pode adicionar isto antes do `read`:
+
+```bash
+if command -v zenity >/dev/null 2>&1; then
+    zenity --warning \
+    --title="☠ Simulação Educativa" \
+    --text="☠ SIMULAÇÃO DE RANSOMWARE ☠
+
+Seus arquivos NÃO foram criptografados.
+Nenhum dado foi apagado.
+Nenhuma alteração foi feita no sistema.
+
+Esta é apenas uma demonstração visual para conscientização." \
+    --width=500 \
+    --height=280
+fi
+```
+
+Versão completa com terminal + pop-up:
+
+```bash
+#!/bin/bash
+
+clear
+
+RED="\033[1;31m"
+WHITE="\033[1;37m"
+YELLOW="\033[1;33m"
+RESET="\033[0m"
+
+echo -e "${RED}"
+cat << "EOF"
+              .-""""-.
+             /        \
+            /_        _\
+           // \      / \\
+           |\__\    /__/|
+            \    ||    /
+             \        /
+              \  __  /
+               '.__.'
+                |  |
+              __|  |__
+             /        \
+EOF
+echo -e "${RESET}"
+
+echo -e "${RED}============================================================${RESET}"
+echo -e "${WHITE}              ☠ SIMULAÇÃO EDUCATIVA ☠${RESET}"
+echo -e "${RED}============================================================${RESET}"
+echo
+echo -e "${YELLOW}ATENÇÃO:${RESET}"
+echo
+echo -e "${WHITE}Esta é uma demonstração visual inspirada em ransomwares.${RESET}"
+echo
+echo -e "${RED}Seus arquivos NÃO foram criptografados."
+echo -e "Nenhum dado foi apagado."
+echo -e "Nenhuma alteração foi feita no sistema.${RESET}"
+echo
+echo -e "${WHITE}Use apenas em ambiente próprio, laboratório ou treinamento.${RESET}"
+echo
+echo -e "${RED}============================================================${RESET}"
+
+if command -v zenity >/dev/null 2>&1; then
+    zenity --warning \
+    --title="☠ Simulação Educativa" \
+    --text="☠ SIMULAÇÃO DE RANSOMWARE ☠
+
+Seus arquivos NÃO foram criptografados.
+Nenhum dado foi apagado.
+Nenhuma alteração foi feita no sistema.
+
+Esta é apenas uma demonstração visual para conscientização." \
+    --width=500 \
+    --height=280
+fi
+
+echo
+read -p "Pressione ENTER para encerrar a simulação..."
+clear
+echo -e "${WHITE}Simulação encerrada com segurança.${RESET}"
+```
